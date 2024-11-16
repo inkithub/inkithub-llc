@@ -13,5 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function openPage() {
-    window.open('e.html', '_blank'); // Opens e.html in a new tab
+    window.open('e.html', '_blank'); // Opens sorry.html in a new tab
 }
