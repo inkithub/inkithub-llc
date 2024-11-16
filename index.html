@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inkithub llc</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">INKITHUB LLC</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#project">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <h1>Welcome to Inkithub</h1>
+        <p>Make your dreams come true with ease.</p>
+        <a href="#services" class="btn">Explore Services</a>
+    </section>
+    
+    <section id="about" class="fade-in">
+        <h2>About Us</h2>
+        <p>We always deliver the best websites.</p>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat">
+                <h2 class="count" data-target="120">0</h2>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat">
+                <h2 class="count" data-target="85">0</h2>
+                <p>Satisfied Clients</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="project" class="projects-section">
+        <h2 class="section-title">Our Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="project1.jpg" alt="emok">
+                <div class="project-info">
+                    <h3>Emok</h3>
+                    <p>The web is made by students. Social media and features are designed by students.</p>
+                    <button class="btn" data-url="https://example.com/emok">View Project</button>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="project2.jpg" alt="Project 2">
+                <div class="project-info">
+                    <h3>Project Title 2</h3>
+                    <p>Praesent tincidunt lacus nec velit varius, id commodo.</p>
+                    <button class="btn" data-url="https://example.com/project2">View Project</button>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="project3.jpg" alt="Project 3">
+                <div class="project-info">
+                    <h3>Project Title 3</h3>
+                    <p>Suspendisse potenti. Nullam luctus enim vel metus aliquet.</p>
+                    <button class="btn" data-url="https://example.com/project3">View Project</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button class="fab-btn" onclick="openPage()">+</button>
+
+<script>
+    // JavaScript to open e.html
+    function openPage() {
+        window.open('e.html', '_blank'); // Opens e.html in a new tab
+    }
+</script>
+
+    <section id="services" class="fade-in">
+        <h2>Our Services</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Website Development</h3>
+                <p>High-quality, tailored solutions.</p>
+            </div>
+            <div class="card">
+                <h3>Stylish Apps with Firebase</h3>
+                <p>Develop feature-rich apps using Firebase.</p>
+            </div>
+            <div class="card">
+                <h3>Custom Projects</h3>
+                <p>We deliver stylish projects and ensure client satisfaction.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="fade-in">
+        <h2>Contact Us</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Inkithub LLC. All rights reserved.</p>
+    </footer>
+
+    <script>
+
+        // Counter Animation
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll(".count");
+            const speed = 200; // Lower is faster
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute("data-target");
+                    const count = +counter.innerText;
+
+                    const increment = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 10);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                updateCount();
+            });
+        });
+
+        // Handle "View Project" button clicks
+        document.querySelectorAll('.project-card .btn').forEach((button) => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const projectUrl = button.getAttribute('data-url');
+                if (projectUrl) {
+                    window.open(projectUrl, '_blank');
+                } else {
+                    alert("No project URL provided.");
+                }
+            });
+        });
+
+    window.addEventListener("load", () => {
+        const loadingOverlay = document.getElementById("loading");
+        loadingOverlay.style.opacity = "0"; // Fade out
+        setTimeout(() => {
+            loadingOverlay.style.display = "none"; // Remove after fade-out
+        }, 500); // Matches the fade-out duration
+    });
+</script>
+
+<!-- Popup Overlay -->
+<div id="popup" class="popup-overlay">
+    <div class="popup-content">
+        <h2>Welcome! Enter this key "mywork" and open.</h2>
+        <input type="text" id="key-input" placeholder="Enter your key" />
+        <button id="submit-btn">Submit</button>
+    </div>
+</div>
+<script>
+   
+   // Check if it's the first visit using localStorage
+    if (!localStorage.getItem("visited")) {
+        // If first visit, show the popup
+        document.getElementById("popup").style.display = "flex";
+        
+        // Mark the user as having visited
+        localStorage.setItem("visited", "true");
+    }
+
+    // Handle the Submit button click
+    document.getElementById("submit-btn").addEventListener("click", function() {
+        const key = document.getElementById("key-input").value;
+
+        if (key) {
+            // Close the popup if a key is entered
+            document.getElementById("popup").style.display = "none";
+            alert("Key entered: " + key); // Or handle the key as required
+        } else {
+            alert("Please enter a key.");
+        }
+    });
+</script>
+
+    </script>
+</body>
+</html>

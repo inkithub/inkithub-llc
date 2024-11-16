@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="e.css">
+</head>
+<body>
+    <header>
+        <h1>e-inkithub</h1>
+    </header>
+    <main>
+        <section class="order-form">
+            <h2>websites</h2>
+            <div class="product" data-price="20">
+                <h3>invoice maker</h3>
+                <p>Price: $20</p>
+                <div class="quantity">
+                    <button class="decrease">-</button>
+                    <input type="number" class="qty" value="0" min="0">
+                    <button class="increase">+</button>
+                </div>
+            </div>
+            <div class="product" data-price="35">
+                <h3>code runner</h3>
+                <p>Price: $35</p>
+                <div class="quantity">
+                    <button class="decrease">-</button>
+                    <input type="number" class="qty" value="0" min="0">
+                    <button class="increase">+</button>
+                </div>
+            </div>
+            <div class="product" data-price="50">
+                <h3>code maker</h3>
+                <p>Price: $50</p>
+                <div class="quantity">
+                    <button class="decrease">-</button>
+                    <input type="number" class="qty" value="0" min="0">
+                    <button class="increase">+</button>
+                </div>
+            </div>
+            <div class="summary">
+                <h3>Total: $<span id="total">0</span></h3>
+                <button id="checkout">Checkout</button>
+            </div>
+        </section>
+    </main>
+    <script src="e.js"></script>
+</body>
+</html>
