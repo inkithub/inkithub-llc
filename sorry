@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sorry</title>
+  <style>
+    /* General Reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #121212;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    /* Text Animation Container */
+    .animated-text {
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .animated-text h1 {
+      font-size: 3rem;
+      animation: typing 4s steps(30, end), blink 0.6s step-end infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #ffffff;
+      display: inline-block;
+    }
+
+    .animated-text p {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out 4s forwards;
+    }
+
+    /* Typing Effect */
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    /* Fade-in Effect */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="animated-text">
+    <h1>sorry</h1>
+    <p>our all team member is busy.</p>
+  </div>
+
+</body>
+</html>
