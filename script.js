@@ -3,7 +3,7 @@ window.addEventListener("load", () => {
     const loadingOverlay = document.getElementById("loading");
     loadingOverlay.style.opacity = "0"; // Fade out
     setTimeout(() => {
-        loadingOverlay.style.display = "none"; // stay after fade-out
+        loadingOverlay.style.display = "none"; 
     }, 500); // Matches the fade-out duration
 });
 
